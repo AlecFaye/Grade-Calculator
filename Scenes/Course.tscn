@@ -1,0 +1,513 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Fonts/Timeless-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/Course.gd" type="Script" id=3]
+[ext_resource path="res://Fonts/MorrisRomanBlack.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.129412, 0.45098, 0.376471, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 28
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.12549, 0.290196, 0.364706, 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.12549, 0.341176, 0.443137, 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="Theme" id=12]
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = SubResource( 7 )
+VScrollBar/styles/grabber_highlight = SubResource( 8 )
+VScrollBar/styles/grabber_pressed = SubResource( 9 )
+VScrollBar/styles/scroll = SubResource( 10 )
+VScrollBar/styles/scroll_focus = SubResource( 11 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.129412, 0.45098, 0.376471, 1 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.12549, 0.54902, 0.45098, 1 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 18
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=20]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 20
+font_data = ExtResource( 4 )
+
+[node name="Course" type="Panel"]
+margin_right = 550.0
+margin_bottom = 750.0
+rect_min_size = Vector2( 550, 750 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="CourseInfo" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -270.0
+margin_top = -368.0
+margin_right = 270.0
+margin_bottom = 372.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="CourseTitle" type="Panel" parent="CourseInfo"]
+margin_right = 540.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 0, 75 )
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="CourseInfo/CourseTitle"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -270.0
+margin_top = -37.5
+margin_right = 270.0
+margin_bottom = 37.5
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "CPS 109 - Computer Science I"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titles" type="HBoxContainer" parent="CourseInfo"]
+margin_top = 85.0
+margin_right = 540.0
+margin_bottom = 135.0
+rect_min_size = Vector2( 0, 50 )
+custom_constants/separation = 10
+
+[node name="AssessmentName" type="Panel" parent="CourseInfo/Titles"]
+margin_right = 320.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 320, 0 )
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="CourseInfo/Titles/AssessmentName"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -25.0
+margin_right = 160.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 4 )
+text = "Assessment Name"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Mark" type="Panel" parent="CourseInfo/Titles"]
+margin_left = 330.0
+margin_right = 430.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 0 )
+custom_styles/panel = SubResource( 5 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="CourseInfo/Titles/Mark"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -25.0
+margin_right = 50.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 6 )
+text = "Mark"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Weight" type="Panel" parent="CourseInfo/Titles"]
+margin_left = 440.0
+margin_right = 540.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 0 )
+custom_styles/panel = SubResource( 5 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="CourseInfo/Titles/Weight"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -25.0
+margin_right = 50.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 6 )
+text = "Weight"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Assessments" type="ScrollContainer" parent="CourseInfo"]
+margin_top = 145.0
+margin_right = 540.0
+margin_bottom = 615.0
+rect_min_size = Vector2( 540, 470 )
+theme = SubResource( 12 )
+scroll_horizontal_enabled = false
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="AssessmentsContainer" type="VBoxContainer" parent="CourseInfo/Assessments"]
+margin_right = 540.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 540, 0 )
+custom_constants/separation = 5
+
+[node name="AddAssessment" type="Button" parent="CourseInfo/Assessments/AssessmentsContainer"]
+margin_right = 540.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+custom_fonts/font = SubResource( 13 )
+text = "Add Assessment"
+
+[node name="PercentageGrade" type="HBoxContainer" parent="CourseInfo"]
+margin_top = 625.0
+margin_right = 540.0
+margin_bottom = 675.0
+rect_min_size = Vector2( 0, 50 )
+custom_constants/separation = 10
+
+[node name="PercentageGrade" type="Panel" parent="CourseInfo/PercentageGrade"]
+margin_right = 430.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 430, 0 )
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="CourseInfo/PercentageGrade/PercentageGrade"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -205.0
+margin_top = -25.0
+margin_right = 215.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 4 )
+text = "Percentage Grade"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="PercentGrade" type="Panel" parent="CourseInfo/PercentageGrade"]
+margin_left = 440.0
+margin_right = 540.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 0 )
+custom_styles/panel = SubResource( 5 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="CourseInfo/PercentageGrade/PercentGrade"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -25.0
+margin_right = 40.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 6 )
+text = "85%"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="GradePoint" type="HBoxContainer" parent="CourseInfo"]
+margin_top = 685.0
+margin_right = 540.0
+margin_bottom = 735.0
+rect_min_size = Vector2( 0, 50 )
+custom_constants/separation = 10
+
+[node name="GradeLabel" type="Panel" parent="CourseInfo/GradePoint"]
+margin_right = 430.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 430, 0 )
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="CourseInfo/GradePoint/GradeLabel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -205.0
+margin_top = -25.0
+margin_right = 215.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 4 )
+text = "Grade Point Average"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="GradePoint" type="Panel" parent="CourseInfo/GradePoint"]
+margin_left = 440.0
+margin_right = 540.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_styles/panel = SubResource( 5 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="CourseInfo/GradePoint/GradePoint"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -25.0
+margin_right = 40.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 6 )
+text = "4.330"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="EditAssessmentPanel" type="Panel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -175.0
+margin_right = 200.0
+margin_bottom = 15.0
+custom_styles/panel = SubResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EditAssessmentPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -190.0
+margin_top = -85.0
+margin_right = 190.0
+margin_bottom = 85.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameEdit" type="LineEdit" parent="EditAssessmentPanel/VBoxContainer"]
+margin_right = 380.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+custom_fonts/font = SubResource( 15 )
+placeholder_text = " Insert Assessment Name"
+
+[node name="MarkContainer" type="HBoxContainer" parent="EditAssessmentPanel/VBoxContainer"]
+margin_top = 60.0
+margin_right = 380.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 0, 50 )
+custom_constants/separation = 10
+
+[node name="Panel" type="Panel" parent="EditAssessmentPanel/VBoxContainer/MarkContainer"]
+margin_right = 290.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 290, 0 )
+custom_styles/panel = SubResource( 18 )
+
+[node name="Label" type="Label" parent="EditAssessmentPanel/VBoxContainer/MarkContainer/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -135.0
+margin_top = -25.0
+margin_right = 145.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 17 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Mark"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarkEdit" type="LineEdit" parent="EditAssessmentPanel/VBoxContainer/MarkContainer"]
+margin_left = 300.0
+margin_right = 380.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 80, 0 )
+custom_styles/normal = SubResource( 19 )
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "100"
+align = 1
+placeholder_text = "90"
+
+[node name="Weight Container" type="HBoxContainer" parent="EditAssessmentPanel/VBoxContainer"]
+margin_top = 120.0
+margin_right = 380.0
+margin_bottom = 170.0
+rect_min_size = Vector2( 0, 50 )
+custom_constants/separation = 10
+
+[node name="Panel" type="Panel" parent="EditAssessmentPanel/VBoxContainer/Weight Container"]
+margin_right = 290.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 290, 0 )
+custom_styles/panel = SubResource( 18 )
+
+[node name="Label" type="Label" parent="EditAssessmentPanel/VBoxContainer/Weight Container/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -135.0
+margin_top = -25.0
+margin_right = 145.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 17 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Weight"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WeightEdit" type="LineEdit" parent="EditAssessmentPanel/VBoxContainer/Weight Container"]
+margin_left = 300.0
+margin_right = 380.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 80, 0 )
+custom_styles/normal = SubResource( 19 )
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "100"
+align = 1
+placeholder_text = "90"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmButton" type="Button" parent="EditAssessmentPanel"]
+margin_left = 300.0
+margin_top = 200.0
+margin_right = 400.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 100, 40 )
+custom_fonts/font = SubResource( 20 )
+text = "Confirm"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseButton" type="Button" parent="EditAssessmentPanel"]
+margin_left = 405.0
+margin_top = -45.0
+margin_right = 445.0
+margin_bottom = -5.0
+rect_min_size = Vector2( 40, 40 )
+custom_fonts/font = SubResource( 21 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}

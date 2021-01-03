@@ -1,90 +1,79 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Fonts/Timeless-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/Course.tscn" type="PackedScene" id=2]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.129412, 0.45098, 0.376471, 1 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 36
+[sub_resource type="DynamicFont" id=1]
+size = 40
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.12549, 0.290196, 0.364706, 1 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 24
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.12549, 0.341176, 0.443137, 1 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 24
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.133333, 0.439216, 0.576471, 1 )
-
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=12]
 size = 20
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="Theme" id=8]
+HScrollBar/icons/decrement = null
+HScrollBar/icons/decrement_highlight = null
+HScrollBar/icons/increment = null
+HScrollBar/icons/increment_highlight = null
+HScrollBar/styles/grabber = SubResource( 3 )
+HScrollBar/styles/grabber_highlight = SubResource( 4 )
+HScrollBar/styles/grabber_pressed = SubResource( 5 )
+HScrollBar/styles/scroll = SubResource( 6 )
+HScrollBar/styles/scroll_focus = SubResource( 7 )
 
 [sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0.0705882, 0.470588, 0.65098, 1 )
+bg_color = Color( 0.129412, 0.45098, 0.376471, 1 )
 
 [sub_resource type="DynamicFont" id=10]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=11]
 size = 20
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=11]
-bg_color = Color( 0.12549, 0.290196, 0.364706, 1 )
-
-[sub_resource type="StyleBoxFlat" id=12]
-bg_color = Color( 0.12549, 0.341176, 0.443137, 1 )
-
-[node name="Semester" type="Panel"]
-margin_right = 550.0
-margin_bottom = 750.0
-rect_min_size = Vector2( 550, 750 )
+[node name="Semester" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SemesterInfo" type="VBoxContainer" parent="."]
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Panel" parent="."]
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -270.0
-margin_top = -368.0
-margin_right = 270.0
-margin_bottom = 372.0
-custom_constants/separation = 10
+margin_left = -300.0
+margin_top = 75.0
+margin_right = 300.0
+margin_bottom = 175.0
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 
-[node name="SemesterTitle" type="Panel" parent="SemesterInfo"]
-margin_right = 540.0
-margin_bottom = 75.0
-rect_min_size = Vector2( 0, 75 )
-custom_styles/panel = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="SemesterInfo/SemesterTitle"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -270.0
-margin_top = -25.0
-margin_right = 270.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+[node name="Label" type="Label" parent="Title"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
 text = "Semester 1"
 align = 1
 valign = 1
@@ -92,599 +81,111 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Titles" type="HBoxContainer" parent="SemesterInfo"]
-margin_top = 85.0
-margin_right = 540.0
-margin_bottom = 135.0
-rect_min_size = Vector2( 0, 50 )
+[node name="AddCourse" type="Button" parent="."]
+anchor_right = 1.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 12 )
+text = "Add Course"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -275.0
+margin_top = -322.0
+margin_right = 275.0
+margin_bottom = 428.0
 custom_constants/separation = 10
-
-[node name="CourseName" type="Panel" parent="SemesterInfo/Titles"]
-margin_right = 400.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 400, 0 )
-custom_styles/panel = SubResource( 3 )
-
-[node name="Label" type="Label" parent="SemesterInfo/Titles/CourseName"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -190.0
-margin_top = -25.0
-margin_right = 200.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 4 )
-text = "Course Name"
-valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Grade" type="Panel" parent="SemesterInfo/Titles"]
-margin_left = 410.0
-margin_right = 540.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 130, 0 )
-custom_styles/panel = SubResource( 5 )
+[node name="Courses" type="ScrollContainer" parent="VBoxContainer"]
+margin_right = 550.0
+margin_bottom = 750.0
+theme = SubResource( 8 )
+scroll_vertical_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
 
-[node name="Label" type="Label" parent="SemesterInfo/Titles/Grade"]
+[node name="CoursesContainer" type="HBoxContainer" parent="VBoxContainer/Courses"]
+margin_right = 550.0
+margin_bottom = 750.0
+custom_constants/separation = 50
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Course1" parent="VBoxContainer/Courses/CoursesContainer" instance=ExtResource( 2 )]
+
+[node name="SemesterGradeAverage" type="Panel" parent="VBoxContainer"]
+margin_top = 760.0
+margin_right = 550.0
+margin_bottom = 820.0
+rect_min_size = Vector2( 550, 60 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/SemesterGradeAverage"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -55.0
+margin_left = -270.0
 margin_top = -25.0
-margin_right = 55.0
+margin_right = 270.0
 margin_bottom = 25.0
-custom_fonts/font = SubResource( 6 )
-text = "Grade"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Course1" type="HBoxContainer" parent="SemesterInfo"]
-margin_top = 145.0
-margin_right = 540.0
-margin_bottom = 195.0
-rect_min_size = Vector2( 0, 50 )
 custom_constants/separation = 10
-
-[node name="CourseName" type="Panel" parent="SemesterInfo/Course1"]
-margin_right = 400.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 400, 0 )
-custom_styles/panel = SubResource( 7 )
-
-[node name="Label" type="Label" parent="SemesterInfo/Course1/CourseName"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -190.0
-margin_top = -25.0
-margin_right = 200.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 8 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "CPS 109 - Computer Science I"
-valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Grade" type="Panel" parent="SemesterInfo/Course1"]
-margin_left = 410.0
-margin_right = 540.0
+[node name="SemesterGrade" type="Panel" parent="VBoxContainer/SemesterGradeAverage/HBoxContainer"]
+margin_right = 430.0
 margin_bottom = 50.0
-rect_min_size = Vector2( 130, 0 )
+rect_min_size = Vector2( 430, 50 )
 custom_styles/panel = SubResource( 9 )
 
-[node name="Label" type="Label" parent="SemesterInfo/Course1/Grade"]
+[node name="Label" type="Label" parent="VBoxContainer/SemesterGradeAverage/HBoxContainer/SemesterGrade"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -65.0
+margin_left = -205.0
 margin_top = -25.0
-margin_right = 55.0
+margin_right = 215.0
 margin_bottom = 25.0
 custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "4.330"
-align = 2
+text = "Semester Grade Point Average"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Course2" type="HBoxContainer" parent="SemesterInfo"]
-margin_top = 205.0
-margin_right = 540.0
-margin_bottom = 255.0
-rect_min_size = Vector2( 0, 50 )
-custom_constants/separation = 10
-
-[node name="CourseName" type="Panel" parent="SemesterInfo/Course2"]
-margin_right = 400.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 400, 0 )
-custom_styles/panel = SubResource( 7 )
-
-[node name="Label" type="Label" parent="SemesterInfo/Course2/CourseName"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -190.0
-margin_top = -25.0
-margin_right = 200.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 8 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "CPS 109 - Computer Science I"
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Grade" type="Panel" parent="SemesterInfo/Course2"]
-margin_left = 410.0
+[node name="Grade" type="Panel" parent="VBoxContainer/SemesterGradeAverage/HBoxContainer"]
+margin_left = 440.0
 margin_right = 540.0
 margin_bottom = 50.0
-rect_min_size = Vector2( 130, 0 )
+rect_min_size = Vector2( 100, 50 )
 custom_styles/panel = SubResource( 9 )
 
-[node name="Label" type="Label" parent="SemesterInfo/Course2/Grade"]
+[node name="Label" type="Label" parent="VBoxContainer/SemesterGradeAverage/HBoxContainer/Grade"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -65.0
+margin_left = -50.0
 margin_top = -25.0
-margin_right = 55.0
+margin_right = 40.0
 margin_bottom = 25.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "4.330"
-align = 2
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Course3" type="HBoxContainer" parent="SemesterInfo"]
-margin_top = 265.0
-margin_right = 540.0
-margin_bottom = 315.0
-rect_min_size = Vector2( 0, 50 )
-custom_constants/separation = 10
-
-[node name="CourseName" type="Panel" parent="SemesterInfo/Course3"]
-margin_right = 400.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 400, 0 )
-custom_styles/panel = SubResource( 7 )
-
-[node name="Label" type="Label" parent="SemesterInfo/Course3/CourseName"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -190.0
-margin_top = -25.0
-margin_right = 200.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 8 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "CPS 109 - Computer Science I"
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Grade" type="Panel" parent="SemesterInfo/Course3"]
-margin_left = 410.0
-margin_right = 540.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 130, 0 )
-custom_styles/panel = SubResource( 9 )
-
-[node name="Label" type="Label" parent="SemesterInfo/Course3/Grade"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -65.0
-margin_top = -25.0
-margin_right = 55.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 10 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "4.330"
-align = 2
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Course4" type="HBoxContainer" parent="SemesterInfo"]
-margin_top = 325.0
-margin_right = 540.0
-margin_bottom = 375.0
-rect_min_size = Vector2( 0, 50 )
-custom_constants/separation = 10
-
-[node name="CourseName" type="Panel" parent="SemesterInfo/Course4"]
-margin_right = 400.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 400, 0 )
-custom_styles/panel = SubResource( 7 )
-
-[node name="Label" type="Label" parent="SemesterInfo/Course4/CourseName"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -190.0
-margin_top = -25.0
-margin_right = 200.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 8 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "CPS 109 - Computer Science I"
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Grade" type="Panel" parent="SemesterInfo/Course4"]
-margin_left = 410.0
-margin_right = 540.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 130, 0 )
-custom_styles/panel = SubResource( 9 )
-
-[node name="Label" type="Label" parent="SemesterInfo/Course4/Grade"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -65.0
-margin_top = -25.0
-margin_right = 55.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 10 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "4.330"
-align = 2
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Course5" type="HBoxContainer" parent="SemesterInfo"]
-margin_top = 385.0
-margin_right = 540.0
-margin_bottom = 435.0
-rect_min_size = Vector2( 0, 50 )
-custom_constants/separation = 10
-
-[node name="CourseName" type="Panel" parent="SemesterInfo/Course5"]
-margin_right = 400.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 400, 0 )
-custom_styles/panel = SubResource( 7 )
-
-[node name="Label" type="Label" parent="SemesterInfo/Course5/CourseName"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -190.0
-margin_top = -25.0
-margin_right = 200.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 8 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "CPS 109 - Computer Science I"
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Grade" type="Panel" parent="SemesterInfo/Course5"]
-margin_left = 410.0
-margin_right = 540.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 130, 0 )
-custom_styles/panel = SubResource( 9 )
-
-[node name="Label" type="Label" parent="SemesterInfo/Course5/Grade"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -65.0
-margin_top = -25.0
-margin_right = 55.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 10 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "4.330"
-align = 2
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Course6" type="HBoxContainer" parent="SemesterInfo"]
-margin_top = 445.0
-margin_right = 540.0
-margin_bottom = 495.0
-rect_min_size = Vector2( 0, 50 )
-custom_constants/separation = 10
-
-[node name="CourseName" type="Panel" parent="SemesterInfo/Course6"]
-margin_right = 400.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 400, 0 )
-custom_styles/panel = SubResource( 7 )
-
-[node name="Label" type="Label" parent="SemesterInfo/Course6/CourseName"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -190.0
-margin_top = -25.0
-margin_right = 200.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 8 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "CPS 109 - Computer Science I"
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Grade" type="Panel" parent="SemesterInfo/Course6"]
-margin_left = 410.0
-margin_right = 540.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 130, 0 )
-custom_styles/panel = SubResource( 9 )
-
-[node name="Label" type="Label" parent="SemesterInfo/Course6/Grade"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -65.0
-margin_top = -25.0
-margin_right = 55.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 10 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "4.330"
-align = 2
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Course7" type="HBoxContainer" parent="SemesterInfo"]
-margin_top = 505.0
-margin_right = 540.0
-margin_bottom = 555.0
-rect_min_size = Vector2( 0, 50 )
-custom_constants/separation = 10
-
-[node name="CourseName" type="Panel" parent="SemesterInfo/Course7"]
-margin_right = 400.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 400, 0 )
-custom_styles/panel = SubResource( 7 )
-
-[node name="Label" type="Label" parent="SemesterInfo/Course7/CourseName"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -190.0
-margin_top = -25.0
-margin_right = 200.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 8 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "CPS 109 - Computer Science I"
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Grade" type="Panel" parent="SemesterInfo/Course7"]
-margin_left = 410.0
-margin_right = 540.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 130, 0 )
-custom_styles/panel = SubResource( 9 )
-
-[node name="Label" type="Label" parent="SemesterInfo/Course7/Grade"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -65.0
-margin_top = -25.0
-margin_right = 55.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 10 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "4.330"
-align = 2
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Course8" type="HBoxContainer" parent="SemesterInfo"]
-margin_top = 565.0
-margin_right = 540.0
-margin_bottom = 615.0
-rect_min_size = Vector2( 0, 50 )
-custom_constants/separation = 10
-
-[node name="CourseName" type="Panel" parent="SemesterInfo/Course8"]
-margin_right = 400.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 400, 0 )
-custom_styles/panel = SubResource( 7 )
-
-[node name="Label" type="Label" parent="SemesterInfo/Course8/CourseName"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -190.0
-margin_top = -25.0
-margin_right = 200.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 8 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "CPS 109 - Computer Science I"
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Grade" type="Panel" parent="SemesterInfo/Course8"]
-margin_left = 410.0
-margin_right = 540.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 130, 0 )
-custom_styles/panel = SubResource( 9 )
-
-[node name="Label" type="Label" parent="SemesterInfo/Course8/Grade"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -65.0
-margin_top = -25.0
-margin_right = 55.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 10 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "4.330"
-align = 2
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TGPA" type="HBoxContainer" parent="SemesterInfo"]
-margin_top = 625.0
-margin_right = 540.0
-margin_bottom = 675.0
-rect_min_size = Vector2( 0, 50 )
-custom_constants/separation = 10
-
-[node name="GPA" type="Panel" parent="SemesterInfo/TGPA"]
-margin_right = 400.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 400, 0 )
-custom_styles/panel = SubResource( 11 )
-
-[node name="Label" type="Label" parent="SemesterInfo/TGPA/GPA"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -190.0
-margin_top = -25.0
-margin_right = 200.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 4 )
-text = "Term Grade Point Average"
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Grade" type="Panel" parent="SemesterInfo/TGPA"]
-margin_left = 410.0
-margin_right = 540.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 130, 0 )
-custom_styles/panel = SubResource( 12 )
-
-[node name="Label" type="Label" parent="SemesterInfo/TGPA/Grade"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -65.0
-margin_top = -25.0
-margin_right = 55.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 6 )
-text = "4.250"
-align = 2
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CGPA" type="HBoxContainer" parent="SemesterInfo"]
-margin_top = 685.0
-margin_right = 540.0
-margin_bottom = 735.0
-rect_min_size = Vector2( 0, 50 )
-custom_constants/separation = 10
-
-[node name="GPA" type="Panel" parent="SemesterInfo/CGPA"]
-margin_right = 400.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 400, 0 )
-custom_styles/panel = SubResource( 11 )
-
-[node name="Label" type="Label" parent="SemesterInfo/CGPA/GPA"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -190.0
-margin_top = -25.0
-margin_right = 200.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 4 )
-text = "Cumulative Grade Point Average"
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Grade" type="Panel" parent="SemesterInfo/CGPA"]
-margin_left = 410.0
-margin_right = 540.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 130, 0 )
-custom_styles/panel = SubResource( 12 )
-
-[node name="Label" type="Label" parent="SemesterInfo/CGPA/Grade"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -65.0
-margin_top = -25.0
-margin_right = 55.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 6 )
-text = "4.250"
 align = 2
 valign = 1
 __meta__ = {
